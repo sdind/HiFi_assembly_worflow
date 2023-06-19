@@ -1,0 +1,54 @@
+configfile: 'config/config.yaml'
+
+include: 'rules/1_PreProcessing.smk'
+include: 'rules/2_Build_asm.smk'
+
+
+
+
+output_list = [
+        directory(os.path.join(config['snakemake_dir_path'], 'results/1_PreProcessing/output_LongQC')),
+        directory(os.path.join(config['snakemake_dir_path'], 'results/1_PreProcessing/output_GenomeScope2')),
+        os.path.join(config['snakemake_dir_path'],"results/2_Build_asm/hifiasm/purgeL0/hifiasmL0.asm.p_ctg.gfa"),
+        os.path.join(config['snakemake_dir_path'],"results/1_PreProcessing/smudgeplot/kmer_counts.jf"),
+        directory(os.path.join(config['snakemake_dir_path'], 'results/2_Build_asm/MitoHifi/out_ref'))]
+
+
+
+if config['ploidy'] == 1:
+    output_list.append(os.path.join(config['snakemake_dir_path'], 'results/2_Build_asm/merqury_after_hifiasm/purgeL0/after_hifiasm_merqOutput.qv'))
+    output_list.append(directory(os.path.join(config['snakemake_dir_path'], "results/2_Build_asm/busco_after_hifiasm/hifiasmL0")))
+    output_list.append(directory(os.path.join(config['snakemake_dir_path'], 'results/2_Build_asm/quast_after_hifiasm/quastL0')))
+    output_list.append(directory(os.path.join(config['snakemake_dir_path'], 'results/2_Build_asm/hicanu')))
+
+if config['ploidy'] == 2:
+    for level in range(4):
+        output_list.append(os.path.join(config['snakemake_dir_path'], f'results/2_Build_asm/merqury_after_hifiasm/purgeL{level}/after_hifiasm_merqOutput.qv'))
+        output_list.append(directory(os.path.join(config['snakemake_dir_path'], f"results/2_Build_asm/busco_after_hifiasm/hifiasmL{level}")))
+        output_list.append(directory(os.path.join(config['snakemake_dir_path'], f'results/2_Build_asm/quast_after_hifiasm/quastL{level}')))
+        output_list.append(directory(os.path.join(config['snakemake_dir_path'], f'results/2_Build_asm/busco_after_purge_dups/hifiasmL{level}')))
+        output_list.append(directory(os.path.join(config['snakemake_dir_path'], f'results/2_Build_asm/quast_after_purge_dups/quastL{level}')))
+        output_list.append(os.path.join(config['snakemake_dir_path'], f'results/2_Build_asm/merqury_after_purgedups/purgeL{level}/after_purgedups_merqOutput.qv'))
+        output_list.append(directory(os.path.join(config['snakemake_dir_path'], 'results/2_Build_asm/hicanu')))
+
+
+#print(output_list)
+
+rule all:
+    input:
+        output_list
+
+
+
+
+
+#level = [0,1]
+
+
+#rule all:
+#    input: os.path.join(config['snakemake_dir_path'],'results/2_Build_asm/hifiasm/purgeL1/hifiasmL1.asm.p_ctg.gfa')
+
+
+
+#rule all:
+#    input: expand(os.path.join(config['snakemake_dir_path'],"results/2_Build_asm/hifiasm/purgeL{purgel}/hifiasmL{purgel}.asm.p_ctg.gfa"), purgel =level)

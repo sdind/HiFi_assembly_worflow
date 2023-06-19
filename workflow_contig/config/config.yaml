@@ -1,0 +1,10 @@
+#parameters
+
+hifi: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/raw_data/Andrena_humilis/fAndHum01/pacbio/A_humilis_01_Mark_dup_PCR/deduplicated.ccs.fastq.gz'
+snakemake_dir_path: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/asm_snakemake/final_test_AndHum/asm_workflow/workflow_contig'
+path_purge_dups: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/packages/purge_dups'
+species_name: "Andrena humilis" # for mitohifi (complete name)
+ploidy: 1
+genome_sie_estimate: 400m #  '4.7m' equals '4700k' equals '4700000'
+busco_phylum: 'hymenoptera_odb10'
+kmer_len: 21

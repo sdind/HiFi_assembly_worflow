@@ -1,0 +1,9 @@
+channels:
+ - conda-forge
+ - bioconda
+ - anaconda
+ - defaults
+
+dependencies:
+  - smudgeplot == 0.2.5
+  - kmer-jellyfish == 2.3.0
