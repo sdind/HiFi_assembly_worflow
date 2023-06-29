@@ -1,0 +1,6 @@
+#parameters
+snakemake_dir_path: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/asm_snakemake/ScoCin_v1/workflow_decontam'
+hifi: '/work/FAC/FBM/DEE/mrobinso/moult/sagane/data/ScoCin/pacbio/Scolo_concat.fastq.gz'
+prim_asm: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/asm_snakemake/ScoCin_v1/workflow_contig/results/2_Build_asm/hifiasm/purgeL3/hifiasmL3.asm.p_ctg.fasta'
+name: "fScoCin_v1"
+busco_phylum: 'arthropoda_odb10'

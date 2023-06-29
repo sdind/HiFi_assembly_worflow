@@ -1,0 +1,13 @@
+configfile: 'config/config.yaml'
+
+include: 'rules/3_decontam.smk'
+
+
+output_list = [os.path.join(config['snakemake_dir_path'], 'results/3_decontam/asm_decontaminated.fasta'), directory(os.path.join(config['snakemake_dir_path'], 'results/3_decontam/output_busco')), directory(os.path.join(config['snakemake_dir_path'], 'results/3_decontam/output_quast'))]
+
+
+rule all:
+    input:
+        output_list
+
+
