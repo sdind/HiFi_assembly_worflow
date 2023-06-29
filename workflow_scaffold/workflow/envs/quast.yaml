@@ -1,0 +1,6 @@
+channels:
+ - bioconda
+ - defaults
+ - conda-forge
+dependencies:
+ - quast == 5.0.0

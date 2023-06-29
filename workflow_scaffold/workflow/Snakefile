@@ -1,0 +1,16 @@
+configfile: 'config/config.yaml'
+
+include: 'rules/4_HiC_scaffolding.smk'
+
+output_list = [os.path.join(config['snakemake_dir_path'], 'results/4_HiC_scaff/output_juicer/yahs_scaffolds_final.chrom.sizes'),
+    directory(os.path.join(config['snakemake_dir_path'], 'results/4_HiC_scaff/busco_after_scaff')),
+    directory(os.path.join(config['snakemake_dir_path'], 'results/4_HiC_scaff/quast_after_scaff')),
+    os.path.join(config['snakemake_dir_path'], 'results/4_HiC_scaff/QC_raw_HiC/QC_aln.bam'),
+    os.path.join(config['snakemake_dir_path'], 'results/4_HiC_scaff/merqury_after_scaff/after_scaff_merqOutput.yahs.out_scaffolds_final.qv')]
+
+
+rule all:
+    input:
+        output_list
+
+

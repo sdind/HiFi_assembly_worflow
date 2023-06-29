@@ -1,0 +1,9 @@
+channels:
+ - conda-forge
+ - bioconda
+ - anaconda
+ - defaults
+
+dependencies:
+  - samtools == 1.16.1
+  - picard == 3.0.0

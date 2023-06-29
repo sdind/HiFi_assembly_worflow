@@ -1,0 +1,15 @@
+#parameters
+
+snakemake_dir_path: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/asm_snakemake/final_test_CarGra/workflow_scaffold'
+hifi: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/raw_data/Carabus_granulatus/fCarGra01/pacbio/C-granu_Circular_Consensus_Sequencing_Trimmed_PCR-Deduplicated_Reads/deduplicated.ccs.fastq.gz'
+prim_asm: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/asm_snakemake/final_test_CarGra/workflow_decontam/results/3_decontam/asm_decontaminated.fasta'
+hic_1: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/raw_data/Carabus_granulatus/fCarGra_64007/HiC/Cgra_HiC_L1_L2_1.fastq.gz'
+hic_2: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/raw_data/Carabus_granulatus/fCarGra_64007/HiC/Cgra_HiC_L1_L2_2.fastq.gz'
+meryl_db: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/asm_snakemake/final_test_CarGra/workflow_contig/results/1_PreProcessing/output_meryl/output.meryl'
+path_juicer: '/work/FAC/FBM/DEE/rwaterho/evofun/sagane/packages/juicer_tools_1.22.01.jar'
+name: "fCarGra01"
+busco_phylum: 'endopterygota_odb10'
+kmer_len: 21
+
+
+# prim_asm is usually the decontaminated asm
