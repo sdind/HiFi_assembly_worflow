@@ -1,6 +1,8 @@
 # HiFi Genome Assembly Workflow
 This repository contains a Snakemake workflow for genome assembly, consisting of three interconnected workflows: workflow_contig, workflow_decontam, and workflow_scaffold. Each workflow performs specific tasks to facilitate the assembly process and improve the quality of the final genome assembly.
 
+An additional [repository](https://github.com/sdind/genome_annotation_workflow) also offers a snakemake workflow for genome annotation using RNA-seq and protein data. 
+
 <br/>
 
 ## Workflow 1: workflow_contig
@@ -40,7 +42,6 @@ The third workflow is dedicated to scaffolding, specifically when Hi-C reads are
 * Hi-C Map Generation: Create a Hi-C contact map using [Juicer](https://github.com/aidenlab/juicer) to visualize the scaffolding results.
 * Scaffolding QC: Evaluate the scaffolded assembly using [Quast](https://quast.sourceforge.net/), [Merqury](https://github.com/marbl/merqury), and [Busco](https://busco.ezlab.org/) to ensure its quality.
 
-<br/>
 
 ### Directory Structure
 All workflows share the same directory structure:
@@ -61,11 +62,12 @@ All workflows share the same directory structure:
   └── scripts    # Custom scripts (if any)
   └── files    # Files required for the worflow (e.g protein dataset) (if any)
 ```
-<br/>
 
 ### Configuration File
 The behavior of the assembly workflow can be customized by modifying the config.yaml file. This file contains various parameters and paths that can be adjusted to suit your specific sequencing data and analysis requirements (it may also be necessary to modify memory usage settings within Snakemake rules depending of your genome size).
 Before running the workflow, make sure to update the values in the config.yaml file according to your setup.
+
+<br/>
 
 ## Workflow_contig Configuration file
 The following parameters can be customized in the configuration file:
