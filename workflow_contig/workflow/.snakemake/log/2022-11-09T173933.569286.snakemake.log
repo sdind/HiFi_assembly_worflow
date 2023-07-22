@@ -1,3 +1,0 @@
-WorkflowErrorin line 1 of /work/FAC/FBM/DEE/rwaterho/evofun/sagane/asm_snakemake/fCarInt01/asm_workflow/workflow/Snakefile:
-Workflow defines configfile config/config.yaml but it is not present or accessible.
-  File "/work/FAC/FBM/DEE/rwaterho/evofun/sagane/asm_snakemake/fCarInt01/asm_workflow/workflow/Snakefile", line 1, in <module>
